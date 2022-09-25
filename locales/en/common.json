@@ -2,5 +2,6 @@
 	"welcome": "Welcome to the internationalized Solito Repo",
 	"about": "This repo uses i18n for internationalization in a Solito Monorepo with a Next and Expo app.",
 	"link1": "Regular Link",
-	"motilink": "Moti Link"
+	"motilink": "Moti Link",
+	"title": "i18n Solito Example"
 }

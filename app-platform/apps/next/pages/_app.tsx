@@ -1,4 +1,5 @@
 import 'raf/polyfill'
+import { appWithTranslation } from 'next-i18next';
 
 const fixReanimatedIssue = () => {
   // FIXME remove this once this reanimated fix gets released
@@ -34,4 +35,6 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
   )
 }
 
-export default MyApp
+// export default MyApp
+export default appWithTranslation(MyApp);
+
