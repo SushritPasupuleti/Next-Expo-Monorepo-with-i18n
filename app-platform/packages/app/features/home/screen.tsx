@@ -16,24 +16,7 @@ export function HomeScreen() {
 			</H1>
 			<View sx={{ maxWidth: 600 }}>
 				<P sx={{ textAlign: 'center' }}>
-					Here is a basic starter to show you how you can navigate from one
-					screen to another. This screen uses the same code on Next.js and React
-					Native.
-				</P>
-				<P sx={{ textAlign: 'center' }}>
-					Solito is made by{' '}
-					<A
-						href="https://twitter.com/fernandotherojo"
-						// @ts-expect-error react-native-web only types
-						hrefAttrs={{
-							target: '_blank',
-							rel: 'noreferrer',
-						}}
-						sx={{ color: 'blue' }}
-					>
-						Fernando Rojo
-					</A>
-					.
+					{t('about')}
 				</P>
 			</View>
 			<View sx={{ height: 32 }} />
@@ -44,7 +27,7 @@ export function HomeScreen() {
 						style: sx({ fontSize: 16, fontWeight: 'bold', color: 'blue' }),
 					}}
 				>
-					Regular Link
+					{t('link1')}
 				</TextLink>
 				<View sx={{ width: 32 }} />
 				<MotiLink
@@ -70,7 +53,7 @@ export function HomeScreen() {
 						selectable={false}
 						sx={{ fontSize: 16, color: 'black', fontWeight: 'bold' }}
 					>
-						Moti Link
+						{t('motilink')}
 					</Text>
 				</MotiLink>
 			</Row>
