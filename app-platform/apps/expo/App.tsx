@@ -4,6 +4,9 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import i18next from 'i18next';
 import { initReactI18next, useTranslation, I18nextProvider } from 'react-i18next';
 
+import english from './locales/en/common.json';
+import klingon from './locales/kl/common.json';
+
 const languageDetector = {
 	type: 'languageDetector',
 	async: true,
@@ -22,24 +25,17 @@ i18next
 		resources: {
 			en: {
 				common: {
-					"welcome": "Welcome to the internationalized Solito Repo",
-					"about": "This repo uses i18n for internationalization in a Solito Monorepo with a Next and Expo app.",
-					"link1": "Regular Link",
-					"motilink": "Moti Link",
-					"title": "i18n Solito Example"
+					...english,
 				},
 			},
 			kl: {
 				common: {
-					"welcome": "yAy'chaj DIruch",
-					"about": "qaStaHvIS poH, veqlargh mInDu'wIj.",
-					"link1": "reghuluS",
-					"motilink": "Qel",
-					"title": "tlha' vutwI'"
+					...klingon,
 				},
 			},
 		},
 	});
+
 
 export default function App() {
 	const { t, i18n } = useTranslation();
@@ -53,7 +49,7 @@ export default function App() {
 						margin: 10,
 					}}
 					onPress={() => i18n.changeLanguage(i18n.language === 'kl' ? 'en' : 'kl')}>
-					<Text>Change Locale</Text>
+					<Text>Change Locale {i18n.language === 'kl' ? 'en' : 'kl'}</Text>
 				</TouchableOpacity>
 				<NativeNavigation />
 			</I18nextProvider>

@@ -38,7 +38,7 @@ function Home() {
 				locale={changeTo}
 			>
 				<button>
-					{t('change-locale', { changeTo })}
+					Change Locale to: {changeTo}
 				</button>
 			</Link>
 		</>
