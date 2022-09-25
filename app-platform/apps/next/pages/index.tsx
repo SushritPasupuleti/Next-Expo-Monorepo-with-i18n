@@ -1,6 +1,7 @@
 import React from 'react'
 import { HomeScreen } from 'app/features/home/screen'
-import { useTranslation, Trans } from 'next-i18next'
+import { Trans, I18nContext } from 'next-i18next'
+import { useTranslation, I18nextProvider } from 'react-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head';
 import { useRouter } from 'next/router'
@@ -11,7 +12,7 @@ import Link from 'next/link'
 function Home() {
 
 	const router = useRouter()
-	const { t, ready } = useTranslation('common')
+	const { t, ready, i18n } = useTranslation('common')
 
 	console.log("T: ", t, ready)
 
@@ -29,7 +30,9 @@ function Home() {
 					{t('title')}
 				</title>
 			</Head>
-			<HomeScreen />
+			<I18nextProvider i18n={i18n}>
+				<HomeScreen />
+			</I18nextProvider>
 			<Link
 				href='/'
 				locale={changeTo}
